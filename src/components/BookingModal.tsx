@@ -39,6 +39,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
     name: "",
     phone: "",
     village: "",
+    email: "",
     timeSlot: "",
   });
 
@@ -67,6 +68,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
         name: formData.name,
         phone: formData.phone,
         village: formData.village,
+        email: formData.email,
         date: formattedDate,
         timeSlot: formData.timeSlot,
       });
@@ -91,6 +93,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
       name: "",
       phone: "",
       village: "",
+      email: "",
       timeSlot: "",
     });
     onClose();
@@ -146,6 +149,20 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                   name="village"
                   placeholder="Enter your village or town name"
                   value={formData.village}
+                  onChange={handleInputChange}
+                  className="bg-background"
+                />
+              </div>
+
+              {/* Email */}
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-foreground">Email (Optional)</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  value={formData.email}
                   onChange={handleInputChange}
                   className="bg-background"
                 />
