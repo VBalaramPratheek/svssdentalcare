@@ -1,0 +1,441 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 180 20% 99%;
+    --foreground: 200 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 15%;
+
+    --primary: 174 62% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 15% 95%;
+    --secondary-foreground: 200 25% 20%;
+
+    --muted: 180 10% 96%;
+    --muted-foreground: 200 15% 45%;
+
+    --accent: 35 90% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 180 15% 90%;
+    --input: 180 15% 90%;
+    --ring: 174 62% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(174 62% 40%) 0%, hsl(180 50% 30%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(35 90% 55%) 0%, hsl(25 85% 50%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(180 20% 98%) 100%);
+    --shadow-soft: 0 4px 20px -4px hsl(200 25% 15% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(200 25% 15% / 0.12);
+    --shadow-hover: 0 12px 40px -8px hsl(174 62% 40% / 0.25);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 200 25% 8%;
+    --foreground: 180 15% 95%;
+
+    --card: 200 25% 12%;
+    --card-foreground: 180 15% 95%;
+
+    --popover: 200 25% 12%;
+    --popover-foreground: 180 15% 95%;
+
+    --primary: 174 62% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 20% 18%;
+    --secondary-foreground: 180 15% 90%;
+
+    --muted: 200 20% 18%;
+    --muted-foreground: 180 10% 60%;
+
+    --accent: 35 90% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 20% 20%;
+    --input: 200 20% 20%;
+    --ring: 174 62% 45%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hero word staggered reveal */
+  .hero-word {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: heroWordReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes heroWordReveal {
+    from {
+      opacity: 0;
+      transform: translateY(40px) rotateX(15deg);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) rotateX(0deg);
+    }
+  }
+
+  /* Hero tagline fade */
+  .hero-tagline {
+    opacity: 0;
+    animation: heroFadeInScale 0.8s ease-out forwards;
+  }
+
+  @keyframes heroFadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* Hero feature badges */
+  .hero-feature-badge {
+    opacity: 0;
+    animation: heroFadeInScale 0.5s ease-out forwards;
+  }
+
+  /* Hero CTA */
+  .hero-cta {
+    opacity: 0;
+    animation: heroFadeInScale 0.6s ease-out forwards;
+  }
+
+  /* Hero stats */
+  .hero-stat {
+    opacity: 0;
+    animation: heroFadeInScale 0.5s ease-out forwards;
+  }
+
+  /* Fade in scale animation (used by subtitle badge) */
+  .animate-fade-in-scale {
+    animation: heroFadeInScale 0.6s ease-out forwards;
+    animation-delay: 0.1s;
+    opacity: 0;
+  }
+
+  /* Shimmer effect */
+  .hero-shimmer {
+    background: linear-gradient(90deg,
+        transparent 0%,
+        hsl(174 62% 50% / 0.6) 25%,
+        hsl(174 62% 70% / 0.9) 50%,
+        hsl(174 62% 50% / 0.6) 75%,
+        transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Hero gradient text for light-on-dark */
+  .text-gradient-hero-light {
+    background: linear-gradient(135deg, hsl(174 62% 55%) 0%, hsl(180 50% 70%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hero CTA button pulse */
+  .hero-cta-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    animation: ctaPulse 2.5s ease-in-out infinite;
+    background: hsl(174 62% 50% / 0.3);
+  }
+
+  @keyframes ctaPulse {
+
+    0%,
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  /* Floating particles */
+  .hero-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: hsl(174 62% 50% / 0.15);
+    animation: particleFloat linear infinite;
+  }
+
+  .hero-particle-1 {
+    width: 6px;
+    height: 6px;
+    top: 20%;
+    left: 15%;
+    animation-duration: 8s;
+  }
+
+  .hero-particle-2 {
+    width: 4px;
+    height: 4px;
+    top: 60%;
+    left: 75%;
+    animation-duration: 12s;
+    animation-delay: -3s;
+  }
+
+  .hero-particle-3 {
+    width: 8px;
+    height: 8px;
+    top: 40%;
+    left: 50%;
+    animation-duration: 10s;
+    animation-delay: -5s;
+  }
+
+  .hero-particle-4 {
+    width: 3px;
+    height: 3px;
+    top: 75%;
+    left: 25%;
+    animation-duration: 9s;
+    animation-delay: -2s;
+  }
+
+  .hero-particle-5 {
+    width: 5px;
+    height: 5px;
+    top: 30%;
+    left: 85%;
+    animation-duration: 11s;
+    animation-delay: -7s;
+  }
+
+  @keyframes particleFloat {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(-100vh) translateX(30px);
+      opacity: 0;
+    }
+  }
+
+  /* Tick animation for confirmation */
+  .tick-circle {
+    animation: tickPop 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+  }
+
+  @keyframes tickPop {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+
+    70% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .tick-circle-bg {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: tickCircleDraw 0.6s ease-out 0.2s forwards;
+  }
+
+  @keyframes tickCircleDraw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .tick-check {
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: tickCheckDraw 0.4s ease-out 0.6s forwards;
+  }
+
+  @keyframes tickCheckDraw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Namaste hands animation */
+  .namaste-hands {
+    opacity: 0;
+    animation: namasteAppear 0.5s ease-out 0.8s forwards, namasteBow 1s ease-in-out 1.3s 3;
+  }
+
+  @keyframes namasteAppear {
+    from {
+      opacity: 0;
+      transform: scale(0.5) translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes namasteBow {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-6px) rotate(-5deg);
+    }
+  }
+}
