@@ -62,10 +62,10 @@ const Hero = ({ onBookingClick }: HeroProps) => {
           {/* Devotional Text */}
           <div className="text-center mb-6 animate-fade-in-scale" style={{ animationDelay: "0.1s" }}>
             <p className="text-white/90 text-sm md:text-base font-medium tracking-wide italic">
-              Om Shri Adhanki Nanacharamma Devatayai Namah
+              Om Shri Addhanki Nancharamma Devatayai Namah
             </p>
             <p className="text-white/90 text-sm md:text-base font-medium tracking-wide italic mt-1">
-              Om Shri Sairam
+              Om Sri Sairam
             </p>
           </div>
 
