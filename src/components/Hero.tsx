@@ -59,6 +59,16 @@ const Hero = ({ onBookingClick }: HeroProps) => {
             Excellence in Dental Care
           </div>
 
+          {/* Devotional Text */}
+          <div className="text-center mb-6 animate-fade-in-scale" style={{ animationDelay: "0.1s" }}>
+            <p className="text-white/90 text-sm md:text-base font-medium tracking-wide italic">
+              Om Shri Adhanki Nanacharamma Devatayai Namah
+            </p>
+            <p className="text-white/90 text-sm md:text-base font-medium tracking-wide italic mt-1">
+              Om Shri Sairam
+            </p>
+          </div>
+
           {/* Main Hospital Name */}
           <h1 className="mb-4">
             <span className="hero-title-line block">
