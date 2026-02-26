@@ -69,30 +69,30 @@ const Contact = ({ onBookingClick }: ContactProps) => {
             </Button>
           </div>
 
-          {/* Map Placeholder */}
+          {/* Google Maps Embed */}
           <div className="relative h-96 lg:h-full min-h-[400px] rounded-3xl overflow-hidden shadow-card">
-            <div className="absolute inset-0 bg-gradient-card flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-hero flex items-center justify-center">
-                  <MapPin className="w-10 h-10 text-primary-foreground" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">
-                  Sri Venkata Sathya Sai Dental Hospital
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Opposite to Vivekananda Nursing Home<br />
-                  Panchayat Office Road, Avanigadda, AP 521121
-                </p>
-                <Button variant="outline" asChild>
-                  <a
-                    href="https://maps.google.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Open in Google Maps
-                  </a>
-                </Button>
-              </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1917.38!2d80.9150462!3d16.025833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a49f3dd81134b15%3A0xbb0accde8f084008!2sVenkata%20Satya%20Sai%20dental%20clinic!5e1!3m2!1sen!2sin!4v1"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Sri Venkata Sathya Sai Dental Hospital Location"
+              className="absolute inset-0 w-full h-full"
+            />
+            <div className="absolute bottom-4 left-4 right-4 flex justify-center">
+              <Button variant="hero" size="sm" asChild>
+                <a
+                  href="https://maps.app.goo.gl/V9yKP1quoXr2rpV1A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MapPin className="w-4 h-4 mr-2" />
+                  Open in Google Maps
+                </a>
+              </Button>
             </div>
           </div>
         </div>
