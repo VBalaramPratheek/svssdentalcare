@@ -5,7 +5,7 @@ interface Specialist {
   specialty: string;
   experience: string;
   qualification: string;
-  photo: string;
+  photo?: string;
 }
 
 interface Specialty {
@@ -27,7 +27,6 @@ const specialists: Specialist[] = [
     specialty: "Dental Specialist",
     experience: "4+ years",
     qualification: "MDS",
-    photo: "/2.jpeg",
   },
 ];
 
@@ -82,15 +81,17 @@ const Specialities = () => {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-hero rounded-b-full" />
 
               {/* Photo */}
-              <div className="relative w-32 h-32 mx-auto mb-6">
-                <img
-                  src={specialist.photo}
-                  alt={specialist.name}
-                  className="w-full h-full rounded-full object-cover shadow-lg"
-                />
-                {/* Subtle ring */}
-                <div className="absolute -inset-1.5 rounded-full border-2 border-primary/15 group-hover:border-primary/30 transition-colors duration-500" />
-              </div>
+              {specialist.photo && (
+                <div className="relative w-32 h-32 mx-auto mb-6">
+                  <img
+                    src={specialist.photo}
+                    alt={specialist.name}
+                    className="w-full h-full rounded-full object-cover shadow-lg"
+                  />
+                  {/* Subtle ring */}
+                  <div className="absolute -inset-1.5 rounded-full border-2 border-primary/15 group-hover:border-primary/30 transition-colors duration-500" />
+                </div>
+              )}
 
               {/* Name */}
               <h3 className="text-2xl font-bold text-foreground mb-2">
