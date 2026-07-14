@@ -63,10 +63,6 @@ const Contact = ({ onBookingClick }: ContactProps) => {
                 </div>
               ))}
             </div>
-
-            <Button variant="hero" size="lg" onClick={onBookingClick}>
-              Book an Appointment
-            </Button>
           </div>
 
           {/* Google Maps Embed */}
@@ -94,6 +90,27 @@ const Contact = ({ onBookingClick }: ContactProps) => {
                 </a>
               </Button>
             </div>
+          </div>
+        </div>
+
+        {/* Need a Consultation Banner */}
+        <div className="mt-16 bg-card/60 border border-border/50 rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto backdrop-blur-sm shadow-[0_20px_50px_rgba(0,0,0,0.05)] animate-fade-up">
+          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            Need a Consultation?
+          </h3>
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+            Schedule your visit online with our simple booking system, or call us directly to speak with our staff.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button variant="hero" size="lg" onClick={onBookingClick} className="w-full sm:w-auto shadow-lg hover:shadow-xl transition-all duration-300">
+              Book Appointment
+            </Button>
+            <Button variant="outline" size="lg" asChild className="w-full sm:w-auto hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+              <a href="tel:+919440678138" className="flex items-center justify-center gap-2">
+                <Phone className="w-5 h-5" />
+                +91 94406 78138
+              </a>
+            </Button>
           </div>
         </div>
       </div>

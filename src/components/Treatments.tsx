@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Stethoscope, Sparkles, Wrench, Hospital, Baby, HeartPulse, type LucideIcon } from "lucide-react";
+import { Stethoscope, Sparkles, Wrench, Hospital, Baby, HeartPulse, Cog, Crown, Shield, Zap, Smile, Activity, type LucideIcon } from "lucide-react";
 
 interface TreatmentsProps {
   onBookingClick: () => void;
@@ -50,11 +50,47 @@ const treatments: Treatment[] = [
     description: "Save your natural teeth with our painless and effective endodontic treatments.",
     features: ["Root Canal", "Re-treatment", "Apicoectomy", "Pulp Therapy"],
   },
+  {
+    icon: Cog,
+    title: "Implantology",
+    description: "Advanced dental implant solutions for missing teeth with high success rates.",
+    features: ["Single Tooth Implants", "All-on-4 Implants", "Bone Grafting", "Implant Crowns"],
+  },
+  {
+    icon: Crown,
+    title: "Prosthodontics",
+    description: "Custom dentures, bridges, and crowns crafted for perfect fit and function.",
+    features: ["Complete Dentures", "Partial Dentures", "Dental Bridges", "Porcelain Crowns"],
+  },
+  {
+    icon: Shield,
+    title: "Periodontics",
+    description: "Expert gum disease treatment and prevention for optimal oral health.",
+    features: ["Gum Scaling & Planing", "Laser Gum Therapy", "Gingival Grafting", "Periodontal Maintenance"],
+  },
+  {
+    icon: Zap,
+    title: "Laser Dentistry",
+    description: "Minimally invasive procedures using cutting-edge laser technology.",
+    features: ["Laser Cavity Detection", "Gum Contouring", "Biopsy & Lesion Removal", "Painless Procedures"],
+  },
+  {
+    icon: Activity,
+    title: "Emergency Dentistry",
+    description: "Immediate care for urgent dental situations like severe toothaches, knocked-out teeth, and broken crowns.",
+    features: ["24/7 Urgent Care", "Toothache Relief", "Broken Tooth Repair", "Emergency Extractions"],
+  },
+  {
+    icon: Smile,
+    title: "Sedation Dentistry",
+    description: "Anxiety-free dental procedures using safe sedation options for a comfortable and relaxed experience.",
+    features: ["Nitrous Oxide", "Oral Sedation", "IV Sedation", "Dental Anxiety Relief"],
+  },
 ];
 
 const Treatments = ({ onBookingClick }: TreatmentsProps) => {
   return (
-    <section id="treatments" className="py-20 md:py-32 bg-secondary/30">
+    <section id="specialities" className="py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-up">
@@ -98,7 +134,7 @@ const Treatments = ({ onBookingClick }: TreatmentsProps) => {
                   </ul>
                   <Button
                     variant="outline"
-                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    className="w-full group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent hover:!bg-accent/90 hover:!text-accent-foreground hover:!border-accent/90 transition-colors"
                     onClick={onBookingClick}
                   >
                     Book This Treatment

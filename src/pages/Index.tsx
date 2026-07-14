@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Specialities from "@/components/Specialities";
+import Treatments from "@/components/Treatments";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
@@ -17,6 +18,7 @@ const Index = () => {
       <Header onBookingClick={openBooking} />
       <Hero onBookingClick={openBooking} />
       <Specialities />
+      <Treatments onBookingClick={openBooking} />
       <Contact onBookingClick={openBooking} />
       <Footer />
       <BookingModal isOpen={isBookingOpen} onClose={closeBooking} />

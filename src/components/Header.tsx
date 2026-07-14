@@ -11,6 +11,7 @@ const Header = ({ onBookingClick }: HeaderProps) => {
 
   const navLinks = [
     { name: "Home", href: "#home" },
+    { name: "Specialists", href: "#specialists" },
     { name: "Specialities", href: "#specialities" },
     { name: "Contact", href: "#contact" },
   ];

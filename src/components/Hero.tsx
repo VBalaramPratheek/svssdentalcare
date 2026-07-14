@@ -137,7 +137,7 @@ const Hero = ({ onBookingClick }: HeroProps) => {
               asChild
               className="border border-white/30 text-white bg-transparent hover:bg-transparent hover:text-white"
             >
-              <a href="#specialities">Meet Our Specialists</a>
+              <a href="#specialists">Meet Our Specialists</a>
             </Button>
           </div>
 
@@ -161,7 +161,7 @@ const Hero = ({ onBookingClick }: HeroProps) => {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <a href="#treatments" className="text-white/40 hover:text-white/70 transition-colors">
+          <a href="#specialities" className="text-white/40 hover:text-white/70 transition-colors">
             <ChevronDown className="w-6 h-6" />
           </a>
         </div>

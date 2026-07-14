@@ -5,6 +5,7 @@ const Footer = () => {
 
   const quickLinks = [
     { name: "Home", href: "#home" },
+    { name: "Specialists", href: "#specialists" },
     { name: "Specialities", href: "#specialities" },
     { name: "Contact", href: "#contact" },
   ];
@@ -13,9 +14,15 @@ const Footer = () => {
     "General Dentistry",
     "Cosmetic Dentistry",
     "Orthodontics",
-    "Dental Implants",
-    "Root Canal",
+    "Oral Surgery",
     "Pediatric Dentistry",
+    "Root Canal Treatment",
+    "Implantology",
+    "Prosthodontics",
+    "Periodontics",
+    "Laser Dentistry",
+    "Emergency Dentistry",
+    "Sedation Dentistry",
   ];
 
   return (
