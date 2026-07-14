@@ -105,7 +105,7 @@ const Contact = ({ onBookingClick }: ContactProps) => {
             <Button variant="hero" size="lg" onClick={onBookingClick} className="w-full sm:w-auto shadow-lg hover:shadow-xl transition-all duration-300">
               Book Appointment
             </Button>
-            <Button variant="default" size="lg" asChild className="w-full sm:w-auto shadow-lg hover:shadow-xl transition-all duration-300">
+            <Button variant="default" size="lg" asChild className="w-full sm:w-auto font-semibold shadow-lg hover:shadow-xl hover:scale-105 active:scale-100 transition-all duration-300">
               <a href="tel:+919440678138" className="flex items-center justify-center gap-2">
                 <Phone className="w-5 h-5" />
                 +91 94406 78138
