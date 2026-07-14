@@ -20,7 +20,7 @@ const Contact = ({ onBookingClick }: ContactProps) => {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@svssdentalcare.com", "appointments@svssdentalcare.com"],
+      details: ["svssdentalcare@gmail.com"],
     },
     {
       icon: Clock,
